@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>示例</title>
+	</head>
+	<style type="text/css">
+		div#d1{
+			width: 200px;
+			height: 300px;
+			border: 1px solid red;
+			float:left;
+		}
+		
+		div#d2{
+			width: 300px;
+			height: 400px;
+			border: 1px solid blue;
+			float:left;
+		}
+	</style>
+	<body>
+		<div id="d1">
+			nihao
+		</div>
+		<div id="d2">
+			hello
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	window.onload = function(){
+		console.log(window.outerWidth);
+	}
+	/*document.body.onload = function(){
+		alert(window.width);
+	}*/
+</script>
