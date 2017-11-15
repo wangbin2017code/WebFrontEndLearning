@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3 class="ye">new soul</h3> 
+		<h3 class="ye">new soul</h3> 
+		<h3 class="ye">new soul</h3> 
+		<h3 class="ye">new soul</h3> 
+	</body>
+</html>
+<script type="text/javascript" src="../js/gobal/jquery-3.2.1.js" ></script>
+<script type="text/javascript"> 
+	jQuery.fn.myPlugin = function(options) { 
+		$options = $.extend( { 
+			html: "no messages", 
+			css: { 
+					"color": "red", 
+					"font-size":"20px" 
+				}
+		},options); 
+			return $(this).css({ 
+					"color": $options.css.color, 
+					"font-size":$options.css.font-size,
+				}).html($options.html); 
+			} 
+		$('.ye').myPlugin({html:"So easy,yes?",css:{"color":"black","font-size":"30px"}}); 
+</script> 
