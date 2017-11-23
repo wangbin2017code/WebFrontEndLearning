@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="margin: 200px;height: 200px;width: 300px;border: 1px solid red;" id="d1">
+			<button onclick="viewCharts()">查看图表</button>
+		</div>
+		
+		<div style="margin: 200px;height: 800px;width: 800px;border: 1px solid blue;display: none;" id="d2">
+			<button onclick="returnPage()">返回</button>
+			<div id="myCharts" style="height: 340px;width: 400px;margin-top: 20px;"></div>
+			<div id="myCharts1" style="height: 340px;width: 400px;margin-top: 20px;"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/gobal/echarts.js" ></script>
+<script type="text/javascript" src="../js/gobal/jquery-3.2.1.js" ></script>
+<script>
+	function viewCharts(){
+		$("#d1").hide();
+		$("#d2").show();
+		// 加载图表
+		var mychart = echarts.init(document.getElementById("myCharts"));
+		var mychart1 = echarts.init(document.getElementById("myCharts1"));
+		// 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+        mychart.setOption(option);
+        mychart1.setOption(option);
+        window.onresize=function(){
+        	$("#myCharts").height(300).width(200);
+        	$("#myCharts1").height(320).width(240);
+        	mychart.resize();
+        	mychart1.resize();
+        }
+	}
+	
+	function returnPage(){
+		$("#d1").show();
+		$("#d2").hide();
+	}
+</script>
